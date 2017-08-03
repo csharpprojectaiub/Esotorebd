@@ -41,7 +41,7 @@ include "navmenu.php";
                         <input id="rePassword" name="repassword" type="password"  maxlength="25"  class="form-control">
                     </div>
                     <div class="form-group" style="padding-top: 12px;">
-                        <button id="signUp" onclick="checkpass();" type="submit" class="btn btn-success btn-block" ">Sign Up</button>
+                        <button id="signUp" onblur="checkpass();" type="submit" class="btn btn-success btn-block" ">Sign Up</button>
                     </div>
                     <div class="form-group divider">
 

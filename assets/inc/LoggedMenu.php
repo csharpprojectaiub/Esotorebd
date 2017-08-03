@@ -150,7 +150,10 @@
     margin-top: -45px;
 }
 </style>
+<?php
+session_start();
 
+?>
 <section id="header_menu">
     <div class="shop_header">
         <div class="container-fluid">
@@ -179,12 +182,12 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                            <ul class="nav navbar-nav navbar-right">s
+                            <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#"><i class="fa fa-user"></i><span class="space"></span> Account</a></li>
                                 <li><a href="#"><i class="fa fa-heart"></i><span class="space"></span> WishList</a></li>
                                 <li><a href="#"><i class="fa fa-check"></i><span class="space"></span> CheckOut</a></li>
-                                <li><a href="http://localhost/phplogin/assets/inc/login.php"><i class="fa fa-check"></i><span class="space"></span> sign in</a></li>
-                                <li><a href="http://localhost/phplogin/assets/inc/register.php"><i class="fa fa-user-plus"></i><span class="space"></span> Register</a></li>
+                                <li><a href="http://localhost/phplogin/assets/functions/member_profile.php"><i class="fa fa-check"></i><span class="space"></span> <?php echo $_SESSION['username'];?></a></li>
+                                <li><a href="http://localhost/phplogin/assets/functions/logout.php"><i class="fa fa-user-plus"></i><span class="space"></span> Sign out</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->

@@ -13,13 +13,23 @@ if(isset($_POST['login'])){
     }
     else{
         $pass=md5($password);
-        $sql="select * from user where UserName='$username' and password='$pass'";
+        $sql="select status from user where UserName='$username' and password='$pass'";
         $result=mysqli_query($connection,$sql);
         $resultceck=mysqli_num_rows($result);
-        if($resultceck>0)
-        {
-            header('location:http://localhost/phplogin/assets/index.php?login=success');
+        $status=mysqli_fetch_array($result);
+
+        if($resultceck>0) {
+            if($status['status']==1){
+                $_SESSION['username']=$username;
+                header('location:http://localhost/phplogin/assets/admin/admin.php?admin=loginadmin');
+            }
+            else{
+                $_SESSION['username']=$username;
+                header('location:http://localhost/phplogin/assets/inc/loggeduserindex.php?user=success');
+            }
         }
+
+
 
 
             else{
@@ -37,7 +47,7 @@ else {
        <h1>Access Denied :Spammers are always welcome</h1>
 
             </div>";
-    header('location:http://localhost/phplogin/assets/index.php?ops=sorry');
+
 
 }
 
