@@ -14,7 +14,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         
-    <title>User Registration</title>
-    <link rel="stylesheet" href="EcommerceSore/assets/css/style.css">
+    <title>Estore Bd </title>
+
 </head>
 <body>
