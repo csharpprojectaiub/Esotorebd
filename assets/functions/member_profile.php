@@ -1,7 +1,7 @@
 <?php
 include_once 'connect.php';
 include_once '../inc/header.php';
-include  '../inc/LoggedMenu.php';
+session_start();
 $username=$_SESSION['username'];
 $sql ="select * from user where UserName='$username'";
 $result=mysqli_query($connection,$sql);

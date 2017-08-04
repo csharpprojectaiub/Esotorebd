@@ -21,7 +21,7 @@ if(isset($_POST['login'])){
         if($resultceck>0) {
             if($status['status']==1){
                 $_SESSION['username']=$username;
-                header('location:http://localhost/phplogin/assets/admin/admin.php?admin=loginadmin');
+                header('location:http://localhost/phplogin/assets/admin/adminui.php?admin=loginadmin');
             }
             else{
                 $_SESSION['username']=$username;

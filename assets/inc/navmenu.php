@@ -146,8 +146,9 @@
         color: #fff;
         background-color: transparent;
     }
-    img.img-responsive.logo {
+img.img-responsive.logo {
     margin-top: -45px;
+    width: 67%;
 }
 </style>
 
@@ -164,15 +165,7 @@
                                 <span class="fa fa-user"></span>
                             </button>
                             <div class="navbar-brand">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Currency <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="#">USD - US Dollar</a></li>
-                                        <li><a href="#">EUR - Euro</a></li>
-                                        <li><a href="#">EGBP - British Pound Sterlinguro</a></li>
-                                    </ul>
-                                </div>
+                                <img class="img-responsive logo" src="../images/logo.png" alt="Creative Shop">
                             </div>
                         </div>
 
@@ -193,45 +186,7 @@
         </div>
     </div>
 </section>
-<section id="logo_cart">
-    <div class="logo_cart">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="logo">
-                        <img class="img-responsive logo" src="./images/logo.png" alt="">
-                    </div>
-                </div>
-                <div class="col-sm-offset-2 col-sm-6 right_logo_cart">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <div class="contact_call text-right">
-                                <ul>
-                                    <li><i class="fa fa-phone"></i><span class="space"></span>+8801750638163</li>
-                                    <li>+8801750638163</li>
-                                    <li id="Time">
-                                        <script type="text/javascript">
-                                            var d = new Date();
-                                            var n = d.toTimeString();
-                                            document.getElementById("Time").innerHTML = n;</script></li>
-                                </ul>
 
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="shopping_cart">
-                                <a href="#"><i class="fa fa-shopping-bag "></i></a>
-                                <span class="badge badge-default">0</span>
-                                <h3>My Cart</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 <section id="mainMenu">
     <div class="container-fluid">
         <div class="row">

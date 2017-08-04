@@ -1,5 +1,5 @@
 <?php require_once '../inc/header.php';
-
+session_start();
 ?>
 <style>
 
@@ -141,8 +141,8 @@
         width: 100%;
         height: 51px;
         position: fixed;
-        left: 15.5%;
-        border-bottom: 1px solid #EDF1F5;
+        left: 22.5%;
+        border-bottom: 2px solid #EDF1F5;
 
     }
     .topbar ul{
@@ -163,21 +163,22 @@
 
     }
 </style>
+
 <div class="nav-side-menu">
-    <div class="brand">Creative Admin</div>
+    <div class="brand"><h1>Creative Admin</h1></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
     <div class="menu-list">
 
         <ul id="menu-content" class="menu-content collapse out">
             <li>
-                <a href="#">
+                <a href="http://localhost/phplogin/assets/admin/admindashboard.php">
                     <i class="fa fa-dashboard fa-lg"></i> Dashboard
                 </a>
             </li>
             <li>
             <li>
-                <a href="#">
+                <a href="http://localhost/phplogin/assets/admin/manageuser.php">
                     <i class="fa fa-users fa-lg"></i> Manage User
                 </a>
             </li>
@@ -187,7 +188,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="http://localhost/phplogin/assets/admin/addproduct_ui.php">
                     <i class="fa fa-users fa-lg"></i> Add Product
                 </a>
             </li>
@@ -222,13 +223,17 @@
             <div class="col-md-10 topbar">
                     <div class="topbar">
                         <ul>
-                            <li><a href="$">Nasim</a></li>
+                            <li><a href="#">Nasim</a></li>
                             <li><a href="">Ahmed</a></li>
                             <li><a href="">Atish</a></li>
                             <li><a href="">Shampa</a></li>
-
+                            <li class="adminsearch"><input class="form-control" type="text" name="adminsearch" placeholder="search here"></li>
+                            <li><a href=""><i class="fa fa-search"></i></a></li>
+                            <li class="adminprofile"><a href="../functions/member_profile.php"><?php echo $_SESSION['username'];?></a></li>
+                            <li class="adminprofile"><a href="../functions/logout.php">Sign Out</a></li>
                         </ul>
                     </div>
+
             </div>
         </div>
     </div>
