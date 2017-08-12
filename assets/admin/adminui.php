@@ -162,6 +162,14 @@ session_start();
         transition: 0.3s ease-in;
 
     }
+    img.admin {
+        display: inline-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
 </style>
 
 <div class="nav-side-menu">
@@ -171,6 +179,9 @@ session_start();
     <div class="menu-list">
 
         <ul id="menu-content" class="menu-content collapse out">
+            <li>
+                <img class="admin" src="../images/nsmajm.jpg" alt="">
+            </li>
             <li>
                 <a href="http://localhost/phplogin/assets/admin/admindashboard.php">
                     <i class="fa fa-dashboard fa-lg"></i> Dashboard

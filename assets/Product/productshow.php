@@ -1,3 +1,10 @@
+<style>
+    .pimage{
+        width:270px;
+        height:300px;
+    }
+
+</style>
 
 <?php
 include '../functions/connect.php';

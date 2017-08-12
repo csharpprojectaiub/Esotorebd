@@ -25,7 +25,7 @@ if(isset($_POST['login'])){
             }
             else{
                 $_SESSION['username']=$username;
-                header('location:http://localhost/phplogin/assets/inc/loggeduserindex.php?user=success');
+                header('location:http://localhost/phplogin/assets/loggeduserindex.php?user=success');
             }
         }
 

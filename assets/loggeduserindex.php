@@ -1,7 +1,6 @@
 <style>
     p.productname.pull-left,p.productname.pull-right {
         color: #000!important;
-
     }
     .col-md-9.productdesign {
         margin-left: -2%;
@@ -53,7 +52,7 @@
 </style>
 
 <?php
-include "./inc/navmenu.php";
+include "./inc/LoggedMenu.php";
 include './inc/header.php';
 include './functions/connect.php';
 
@@ -88,13 +87,13 @@ $result=mysqli_query($connection,$sql);
                             <img class="pimage" src="../assets<?php echo $row["productimage"];?>" alt="">
                             <div class="row cartprice " >
 
-                                <div class="pull-left">
-                                    <h4 class="price">Price :$<?php echo $row["productprice"] ?></h4>
-                                </div>
-                                <div class="pull-right">
-                                    <a  href="#"   style="text-align: center" class="btn btn-warning addtocart">Add to Cart</a>
+                                  <div class="pull-left">
+                                      <h4 class="price">Price :$<?php echo $row["productprice"] ?></h4>
+                                  </div>
+                                  <div class="pull-right">
+                                      <a  href="#"   style="text-align: center" class="btn btn-warning addtocart">Add to Cart</a>
 
-                                </div>
+                                  </div>
 
                             </div>
 

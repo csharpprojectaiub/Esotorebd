@@ -7,7 +7,7 @@ if(isset($_POST['addproduct'])){
     $productprice=$_POST['pprice'];
     $productquantity=$_POST['pquantity'];
     $productcategory=$_POST['pcategory'];
-
+    $productdesc=$_POST['pdesc'];
     //random number generaor for photo
     $img1=md5(rand(11111,999999));
 
@@ -21,7 +21,7 @@ if(isset($_POST['addproduct'])){
     move_uploaded_file($uploadTemp,$productstore);
 
     //query for add product
-    $sql ="insert into product(productname,productprice,productquantity,productimage,productcategory)VALUES ('$productname','$productprice','$productquantity','$productstoredb','$productcategory')";
+    $sql ="insert into product(productname,productprice,productquantity,productimage,productcategory,pdesc)VALUES ('$productname','$productprice','$productquantity','$productstoredb','$productcategory','$productdesc')";
     $result =mysqli_query($connection,$sql);
     if($result>0){
         header('location:http://localhost/phplogin/assets/admin/addproduct_ui.php');
@@ -29,6 +29,7 @@ if(isset($_POST['addproduct'])){
     }
     else{
         header('location:http://localhost/phplogin/assets/admin/admindashboard.php');
+
     }
 
 }
