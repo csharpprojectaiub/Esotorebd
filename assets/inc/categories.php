@@ -58,7 +58,8 @@ include "header.php";
 <div class="category">
 <h3 class="category-titile">Categories</h3>
 <ul class="list-unstyled">
-<li><a href="">Mobile</a></li>
+<li><a href="http://localhost/phplogin/assets/">Home</a></li>
+<li><a href="http://localhost/phplogin/assets/">Home</a></li>
 <li><a href="">Computer</a></li>
 <li><a href="">Gamings</a></li>
 <li><a href="">Mobile</a></li>

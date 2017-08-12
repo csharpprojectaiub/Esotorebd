@@ -38,6 +38,8 @@
         background-color: #D8EBF8;
         margin-right: 0px;
         margin-left: 0px;
+        padding-bottom: 4px;
+        padding-top: 4px;
     }
     .products{
         border: 1px solid #DEECD8;
@@ -49,13 +51,25 @@
         margin-left: 0;
         margin-right: 0px;
     }
+    h2.products-page {
+        position: relative;
+        left: 20px;
+    }
 
 </style>
 
 <?php
-include "./inc/navmenu.php";
 include './inc/header.php';
 include './functions/connect.php';
+//include "./inc/navmenu.php";
+session_start();
+if(!isset($_SESSION['username'])){
+    include "./inc/navmenu.php";
+}
+else{
+    include "./inc/LoggedMenu.php";
+}
+
 
 
 $sql="select *from product";

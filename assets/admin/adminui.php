@@ -162,13 +162,12 @@ session_start();
         transition: 0.3s ease-in;
 
     }
-    img.admin {
-        display: inline-block;
+    .img-circle {
         position: relative;
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
         border-radius: 50%;
+        width: 148px;
+        height: 148px;
+        left: 20%;
     }
 </style>
 
@@ -180,7 +179,7 @@ session_start();
 
         <ul id="menu-content" class="menu-content collapse out">
             <li>
-                <img class="admin" src="../images/nsmajm.jpg" alt="">
+                <img class="img-circle" src="../images/nsmajm.jpg" alt="">
             </li>
             <li>
                 <a href="http://localhost/phplogin/assets/admin/admindashboard.php">

@@ -107,10 +107,7 @@ input.form-control.search {
         background-color: #1fc0a0!important;
     }
 </style>
-<?php
-session_start();
 
-?>
 <section id="header_menu">
     <div class="shop_header">
         <div class="container-fluid">
