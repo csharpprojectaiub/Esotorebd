@@ -26,6 +26,5 @@
 
 
 
-<script type="application/javascript" src="../js/main.js"></script>
 </body>
 </html>
