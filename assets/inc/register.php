@@ -4,7 +4,12 @@ include "header.php";
 include "navmenu.php";
 
 ?>
-<div class="container">
+<style>
+    .signup{
+        margin-top: 10%;
+    }
+</style>
+<div class="container signup">
     <div class="row">
         <div class="col-md-offset-3 col-md-6 col-md-offset-3">
         <div class="panel panel-primary">
@@ -36,10 +41,7 @@ include "navmenu.php";
                         <strong>Password</strong>
                         <input id="Password" name="password" type="password"  maxlength="25"  class="form-control">
                     </div>
-                    <div class="form-group">
-                        <strong>Password (re-type)</strong>
-                        <input id="rePassword" name="repassword" type="password"  maxlength="25"  class="form-control">
-                    </div>
+
                     <div class="form-group" style="padding-top: 12px;">
                         <button id="signUp" onblur="checkpass();" type="submit" class="btn btn-success btn-block" ">Sign Up</button>
                     </div>

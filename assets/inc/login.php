@@ -2,9 +2,13 @@
 include "header.php";
 include "navmenu.php"
 ?>
+<style>
+.signin{
+    margin-top: 10%;
+}
+</style>
 
-
-<div class="container">
+<div class="container signin">
     <div class="row">
         <div class="col-md-offset-3 col-md-6 col-md-offset-3">
             <div class="panel panel-primary">

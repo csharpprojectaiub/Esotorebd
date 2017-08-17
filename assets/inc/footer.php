@@ -24,7 +24,11 @@
     </div>
 </div>
 
-
+<script>
+     function productadd(){
+         alert("Product Added");
+     }
+</script>
 
 </body>
 </html>

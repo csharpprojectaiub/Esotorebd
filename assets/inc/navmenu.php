@@ -107,6 +107,9 @@ input.form-control.search {
         left: -8px;
         background-color: #1fc0a0!important;
     }
+    .modal-content {
+        width: 125%;
+    }
 
 </style>
 
@@ -114,7 +117,7 @@ input.form-control.search {
     <div class="shop_header">
         <div class="container-fluid">
             <div class="row">
-                <nav class="navbar navbar-default ">
+                <nav class="navbar navbar-default navbar-fixed-top ">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
@@ -133,7 +136,7 @@ input.form-control.search {
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <form class="navbar-form" role="search" action="../functions/search.php">
+                                    <form class="navbar-form" role="search" action="./functions/search.php">
                                         <div class="input-group">
                                             <input type="text" class="form-control search" placeholder="Search" name="search">
                                             <div class="input-group-btn">
@@ -158,7 +161,7 @@ input.form-control.search {
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Cart</h4>
                     </div>
                     <div class="modal-body">
                         <div class="table-responsive">
@@ -166,11 +169,12 @@ input.form-control.search {
                                 <tr>
                                     <th width="40%">Item Name</th>
                                     <th width="10%">Quantity</th>
-                                    <th width="20%">Price</th>
-                                    <th width="25%">Total</th>
-                                    <th width="5%">Action</th>
+                                    <th width="30%">Price</th>
+                                    <th width="35%">Total</th>
+                                    <th width="30%">Action</th>
                                 </tr>
                                 <?php
+
                                 if(!empty($_SESSION["shopping_cart"]))
                                 {
                                     $total = 0;
@@ -178,7 +182,9 @@ input.form-control.search {
                                     {
                                         ?>
                                         <tr>
+
                                             <td><?php echo $values["item_name"]; ?></td>
+
                                             <td><?php echo $values["item_quantity"]; ?></td>
                                             <td>$ <?php echo $values["item_price"]; ?></td>
                                             <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
@@ -202,6 +208,7 @@ input.form-control.search {
 
                     </div>
                     <div class="modal-footer">
+                        <a href="http://localhost/phplogin/assets/functions/order.php" class="btn btn-default">CheckOut</a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>

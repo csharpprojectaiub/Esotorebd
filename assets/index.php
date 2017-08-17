@@ -6,9 +6,7 @@
         color: #000!important;
 
     }
-    .col-md-9.productdesign {
-        margin-left: -2%;
-    }
+
     .productname {
         background: #D8EBF8;
         padding: 10px;
@@ -17,7 +15,7 @@
     }
     .pimage{
         width:100%;
-        height:300px;
+        height:250px;
     }
     .row.products-page {
         background-color: #D8EBF8;
@@ -55,13 +53,42 @@
     h2.products-page {
         margin-left: 20px;
     }
-
+    input.form-control.qty {
+        width: 30%;
+        position: relative;
+        top: -35px;
+        left: 116px;
+    }
+    input.btn.btn-warning.btncart {
+        position: relative;
+        top: -19px;
+        left: -10px;
+        width: 100%;
+    }
+    .col-md-9.productdesign {
+        margin-top: 5%;
+    }
+    .category {
+        margin-top: 26%;
+    }
 </style>
-
+<div class="slider">
+    <?php include "./inc/slider.php";?>
+</div>
 <?php
 include './functions/connect.php';
-session_start();
 
+//session destroy after 100s
+/*$inactive = 100;
+if( !isset($_SESSION['timeout']) )
+    $_SESSION['timeout'] = time() + $inactive;
+
+$session_life = time() - $_SESSION['timeout'];
+
+if($session_life > $inactive)
+{  session_destroy(); header("Location:index.php");     }
+
+$_SESSION['timeout']=time();*/
 if(isset($_POST["add_to_cart"]))
 {
     if(isset($_SESSION["shopping_cart"]))
@@ -76,11 +103,11 @@ if(isset($_POST["add_to_cart"]))
                 'item_price'     =>     $_POST["hidden_price"],
                 'item_quantity'  =>     $_POST["quantity"]
             );
+
             $_SESSION["shopping_cart"][$count] = $item_array;
         }
         else
         {
-            echo '<script>alert("Item Already Added")</script>';
             echo '<script>window.location="index.php"</script>';
         }
     }
@@ -125,50 +152,67 @@ $result=mysqli_query($connection,$sql);
 ?>
 <div class="container-fluid">
     <div class="row ">
-        <div class="col-md-3">
+        <div class="col-md-3 categories">
             <?php
             include "./inc/categories.php";
+
             ?>
         </div>
+
         <div class="col-md-9 productdesign">
             <div class="row products-page">
+                <div class="productadded">
+                        <h1 id="demo"></h1>
+                </div>
                 <h2 class="products-page">Products</h2>
             </div>
             <?php
+
+
             while($row=mysqli_fetch_array($result))
             {
-                ?>
 
-                <div class="productshow">
 
-                    <div class="col-md-4">
-                        <form method="post" action="index.php?action=add&id=<?php echo $row["productid"]; ?>">
-                        <div class="products">
-                            <div class="row pnamecat">
-                                <p class="productname pull-left"><?php echo $row["productname"];?> </p>
-                                <p class="productname pull-right"><?php echo $row["productcategory"];?> </p>
-                            </div>
-                            <img class="pimage" src="../assets<?php echo $row["productimage"];?>" alt="">
-                            <div class="row cartprice " >
+                    ?>
 
-                                <div class="pull-left">
-                                    <h4 class="price">Price :$<?php echo $row["productprice"] ?></h4>
+                    <div class="productshow">
+
+                        <div class="col-md-4">
+                            <form method="post" action="index.php?action=add&id=<?php echo $row["productid"]; ?>">
+                                <div class="products">
+                                    <div class="row pnamecat">
+                                        <p class="productname pull-left"><?php echo $row["productname"]; ?> </p>
+                                        <p class="productname pull-right"><?php echo $row["productcategory"]; ?> </p>
+                                    </div>
+                                    <a href="./functions/productshow.php?action=view&id=<?php echo $row["productid"]; ?>"><img
+                                                class="pimage" src="../assets<?php echo $row["productimage"]; ?>"
+                                                alt=""></a>
+                                    <div class="row cartprice ">
+
+                                        <div class="pull-left">
+                                            <h4 class="price">Price :$<?php echo $row["productprice"] ?></h4>
+                                        </div>
+                                        <div class="pull-right">
+                                            <input type="number" name="quantity" class="form-control qty" value="1"/>
+                                            <input type="hidden" name="hidden_name"
+                                                   value="<?php echo $row["productname"]; ?>"/>
+                                            <input type="hidden" name="hidden_price"
+                                                   value="<?php echo $row["productprice"]; ?>"/>
+                                            <input onclick="productadd();" type="submit" name="add_to_cart"
+                                                   class="btn btn-warning btncart" value="Add to Cart"/>
+
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <div class="pull-right">
-                                    <input type="hidden" name="quantity" class="form-control" value="1" />
-                                    <input type="hidden" name="hidden_name" value="<?php echo $row["productname"]; ?>" />
-                                    <input type="hidden" name="hidden_price" value="<?php echo $row["productprice"]; ?>" />
-                                    <input type="submit" name="add_to_cart" class="btn btn-warning" value="Add to Cart" />
-
-                                </div>
-
-                            </div>
-
                         </div>
+                        </form>
                     </div>
-                    </form>
-                </div>
-                <?php
+                    <?php
+
+
+
 
             }
             ?>

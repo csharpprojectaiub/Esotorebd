@@ -44,6 +44,11 @@ session_start();
         vertical-align: middle;
         float: right;
     }
+    .nav-side-menu li a {
+        text-decoration: none;
+        color: #e1ffff;
+        font-size: 17px;
+    }
     .nav-side-menu ul .active,
     .nav-side-menu li .active {
         border-left: 3px solid #d19b3d;
@@ -169,6 +174,34 @@ session_start();
         height: 148px;
         left: 20%;
     }
+    .totalsales{
+
+        background-color: #9BC43E;
+        text-align: center;
+    }
+    .totalmember{
+        background-color: #5bc0eb;
+        text-align: center;
+    }
+    .totalearning{
+        background-color: #E55A35;
+        text-align: center;
+    }
+    .icon {
+        padding-left: 30%;
+        padding-top: 50%;
+        color: #fff;
+    }
+    .dashboadtitle {
+        color: #fff;
+    }
+    .maincontent {
+        margin-top: 10%;
+
+    }
+    .subcontent {
+        padding-top: 50px;
+    }
 </style>
 
 <div class="nav-side-menu">
@@ -247,4 +280,5 @@ session_start();
             </div>
         </div>
     </div>
+
 </div>

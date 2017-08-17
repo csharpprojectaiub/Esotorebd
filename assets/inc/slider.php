@@ -1,219 +1,290 @@
 <?php
 include 'header.php';
+
+
 ?>
 <style>
-
-    .slider{
-        padding-top: 30px;
-        padding-bottom: 30px;
-        width: 96.6%;
-        margin: 0 auto;
-    }
-    .carousel-indicators {
-        top: 70%;
-    }
-
-    .fade-carousel {
+    .hader
+    {
         position: relative;
-        height: 95vh;
+        width: 100%;
     }
 
-    .fade-carousel .carousel-inner .item {
-        height: 95vh;
+    /* Shutter Out Horizontal */
+    .navbar-default .navbar-nav > li > a{
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        background: transparent;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        border-bottom: 1px solid transparent;
     }
-
-    .fade-carousel .carousel-indicators > li {
-        margin: 0 2px;
-        background-color: #f39c12;
-        border-color: #f39c12;
-        opacity: .7;
-    }
-
-    .fade-carousel .carousel-indicators > li.active {
-        width: 10px;
-        height: 10px;
-        opacity: 1;
-    }
-
-    .fade-carousel .carousel-indicators > li {
-        margin: 0 2px;
-        background-color: #00291f;
-        border: 5px solid #f3f5f5;
-    ;
-    }
-
-
-    /*********************slide Content Header*******************/
-
-    .sliderContent {
+    .navbar-default .navbar-nav > li > a:before {
+        content: "";
         position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 3;
-        color: #fff;
-        text-align: center;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
-        -webkit-transform: translate3d(-50%, -50%, 0);
-        -moz-transform: translate3d(-50%, -50%, 0);
-        -ms-transform: translate3d(-50%, -50%, 0);
-        -o-transform: translate3d(-50%, -50%, 0);
-        transform: translate3d(-50%, -50%, 0);
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 2px solid #000 ;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        color: #000;
+        transition: ease 0.5s;
     }
-
-    .sliderContent h1 {
-        font-size: 40px;
-        font-weight: 500;
-        margin: 0;
-        padding: 0;
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active {
+        color: #000;
+        transition: ease 0.5s;
     }
-
-    .fade-carousel .carousel-inner .item .sliderContent {
-        opacity: 0;
-        -webkit-transition: 2s all ease-in-out .1s;
-        -moz-transition: 2s all ease-in-out .1s;
-        -ms-transition: 2s all ease-in-out .1s;
-        -o-transition: 2s all ease-in-out .1s;
-        transition: 2s all ease-in-out .1s;
+    .navbar-default .navbar-nav > li > a:hover:before, .navbar-default .navbar-nav > li > a:focus:before, .navbar-default .navbar-nav > li > a:active:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        transition: ease 0.5s;
     }
-
-    .fade-carousel .carousel-inner .item.active .sliderContent {
-        opacity: 1;
-        -webkit-transition: 2s all ease-in-out .1s;
-        -moz-transition: 2s all ease-in-out .1s;
-        -ms-transition: 2s all ease-in-out .1s;
-        -o-transition: 2s all ease-in-out .1s;
-        transition: 2s all ease-in-out .1s;
+    .video-part
+    {
+        width: 100%;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        height: 500px;
     }
+    .video-part video
+    {
+        margin-top: -15%;
+        width: 100%;
 
 
-    /*********************OverLay *******************/
-
-    .overlay {
+    }
+    .video-part-content
+    {
         position: absolute;
+        top: 0%;
+        left: 0%;
         width: 100%;
         height: 100%;
-        z-index: 2;
-        background-color: #080d15;
-        opacity: .4;
+        padding-top: 8%;
+        background:rgba(87, 117, 189, 0.5) ;
     }
 
-
-    /* Link Style slider */
-
-    .sliderlink {
-        padding-top: 20px;
+    .video-part-content .carousel-caption
+    {
+        position: relative !important;
+        left: 0%;
+        right: 0%;
+    }
+    .video-part-content .carousel-indicators
+    {
+        top: 316px;
+    }
+    .hader
+    {
+        margin-top: 2%;
+    }
+    .video-part-content .carousel-caption h1
+    {
+        font-size: 50px;
+    }
+    .video-part-content .carousel-caption p
+    {
+        font-size: 20px;
     }
 
-    .sliderlink a {
-        padding: 10px 30px;
-        border: 2px solid #fff;
+    .navbar-default.affix .navbar-nav > li > a {
+        color: #333;
+    }
+    .btn-info
+    {
+        background: #5674bc;
+        border: 1px solid #5674bc;
+        border-radius: 0px;
+        transition: ease 0.5s;
+    }
+    .btn-info
+    {
+        color: #5674bc;
+        transition: ease 0.5s;
+    }
+    .full-width
+    {
+        width: 100%;
+        float: left;
+    }
+    .video-part-content .btn-info:hover {
         color: #fff;
-        border-radius: 40px;
-        text-decoration: none;
+        border: 1px solid #fff;
+        transition: ease 0.5s;
+        background: transparent;
     }
 
-    .sliderlink a:hover {
-        -webkit-box-shadow: 1px -1px 65px -2px rgba(56, 65, 161, 1);
-        -moz-box-shadow: 1px -1px 65px -2px rgba(56, 65, 161, 1);
-        box-shadow: 1px -1px 65px -2px rgba(56, 65, 161, 1);
-        transition: .2 all ease-in;
+    .navbar-default .navbar-nav > li > a {
+        color: #fff;
+    }
+    .navbar-nav > li > a {
+        padding-bottom: 6px;
+        padding-top: 15px;
+    }
+    .btn-info {
+        background: #5674bc none repeat scroll 0 0;
+        border: 1px solid #5674bc;
+        border-radius: 0;
+        color: #fff;
+        transition: all 0.5s ease 0s;
     }
 
+    @-webkit-keyframes fadeInDown {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
 
-    /*********************Carousel Background*******************/
-
-    .fade-carousel .slides .slide-1,
-    .fade-carousel .slides .slide-2,
-    .fade-carousel .slides .slide-3 {
-        height: 100vh;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
     }
 
-    .fade-carousel .slides .slide-1,
-    .fade-carousel .slides .slide-2,
-    .fade-carousel .slides .slide-3,
-    .fade-carousel .slides .slide-4,
-    .fade-carousel .slides .slide-5{
-        background-image: url(./images/slider3.jpg);
-        background-attachment: fixed;
-        height: 100vh;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    .fadeInDown {
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+    }
+
+    @-webkit-keyframes fadeInUp {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        animation-delay:1s;
+        animation-duration:2s;
     }
 
 </style>
+<div class="hader">
 
-<section id="slider">
-    <div class="slider">
-        <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-            <!-- Overlay -->
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#bs-carousel" data-slide-to="1"></li>
-                <li data-target="#bs-carousel" data-slide-to="2"></li>
-                <li data-target="#bs-carousel" data-slide-to="3"></li>
-                <li data-target="#bs-carousel" data-slide-to="4"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item slides active">
-                    <div class="overlay"></div>
-                    <div class="slide-1"></div>
-                    <div class="sliderContent">
-                        <hgroup>
-                            <h1>We are creative</h1>
-                            <h3>Get start your next awesome project</h3> </hgroup>
+<div class="video-part">
+    <video autoplay="autoplay" loop="loop" muted="muted">
+        <source src="http://lightofweb.com/zanzo-website/video/Typing.mp4" type="video/mp4">
+    </video>
 
-                        <div class="sliderlink"> <a href="#">Learn More</a> </div>
+    <div class="container">
+        <div class="video-part-content">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-caption ">
+                            <center>
+                                <img src="http://lightofweb.com/zanzo-website/img/light-bulb.png" class="img-responsive animated fadeInDown">
+                            </center>
+                            <div class="full-width animated fadeInUp">
+                                <h1>Racing your ideas to reality</h1>
+                                <p>Transforming ideas to successful business goal,
+                                    with your extended IT team. </p>
+                                <a href="#" class="btn btn-info">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="item slides">
-                    <div class="overlay"></div>
-                    <div class="slide-2"></div>
-                    <div class="sliderContent">
-                        <hgroup>
-                            <h1>We are smart</h1>
-                            <h3>Get start your next awesome project</h3> </hgroup>
-                        <div class="sliderlink"> <a href="#">Learn More</a> </div>
+                    <div class="item">
+                        <div class="carousel-caption ">
+                            <center>
+                                <img src="http://lightofweb.com/zanzo-website/img/light-bulb.png" class="img-responsive  animated fadeInDown">
+                            </center>
+                            <div class="full-width animated fadeInUp">
+                                <h1>Racing your ideas to reality</h1>
+                                <p>Transforming ideas to successful business goal,
+                                    with your extended IT team. </p>
+                                <a href="#" class="btn btn-info">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="item slides">
-                    <div class="overlay"></div>
-                    <div class="slide-3"></div>
-                    <div class="sliderContent">
-                        <hgroup>
-                            <h1>We are amazing</h1>
-                            <h3>Get start your next awesome project</h3> </hgroup>
-                        <div class="sliderlink"> <a href="#">Learn More</a> </div>
+                    <div class="item">
+                        <div class="carousel-caption">
+                            <center>
+                                <img src="http://lightofweb.com/zanzo-website/img/light-bulb.png" class="img-responsive animated fadeInDown">
+                            </center>
+                            <div class="full-width animated fadeInUp">
+                                <h1>Racing your ideas to reality</h1>
+                                <p>Transforming ideas to successful business goal,
+                                    with your extended IT team. </p>
+                                <a href="#" class="btn btn-info">Read More</a>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-                <div class="item slides">
-                    <div class="overlay"></div>
-                    <div class="slide-4"></div>
-                    <div class="sliderContent">
-                        <hgroup>
-                            <h1>We are smart</h1>
-                            <h3>Get start your next awesome project</h3> </hgroup>
-                        <div class="sliderlink"> <a href="#">Learn More</a> </div>
-                    </div>
-                </div>
-                <div class="item slides">
-                    <div class="overlay"></div>
-                    <div class="slide-5"></div>
-                    <div class="sliderContent">
-                        <hgroup>
-                            <h1>We are smart</h1>
-                            <h3>Get start your next awesome project</h3> </hgroup>
-                        <div class="sliderlink"> <a href="#">Learn More</a> </div>
-                    </div>
-                </div>
+
+                <!-- Controls -->
+
             </div>
-
         </div>
     </div>
-</section>
+
+</div>
+
+
+
+</div>
